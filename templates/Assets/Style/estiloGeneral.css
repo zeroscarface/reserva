@@ -1,0 +1,104 @@
+
+@font-face {
+font-family: "Razer";
+src: url(../RAZER.ttf);
+}
+
+
+body {
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:14px;
+	margin: 0px;
+}
+
+h1 {
+	font-family: "Razer", "Verdana", sans-serif;
+	color: #2F9AB9;
+}
+
+#Banner {
+	height:120px; 
+	background-color:#000;
+	min-width: 1024px;
+	background-image: url(../Imagenes/stripebg.png);
+	background-repeat: repeat;
+	background-position: left top;
+}
+
+#logo {
+	height: 95%;
+	width: 400px;
+	background-image: url(../Imagenes/logo.png);
+	background-repeat:no-repeat;
+	margin-left: 25%;
+	color:#CCC;
+	padding-left: 130px;
+
+}
+
+#Banner h1 {
+	color: #CCC;
+	height:95%;
+	margin: 0px;
+	font-size:24px;
+		
+}
+
+.Colorcito {
+	background-color: #454E50;
+	height: 5px;
+}
+
+.container {
+	width: 80%;
+	background-color: #454E50;
+	margin: 0 auto;
+	min-width: 1024px;
+
+}
+
+#wrap {
+	margin-top:4px;
+	min-width:1024px;
+}
+
+.sidebar{
+	min-height: 300px;
+	height: auto;
+	margin: auto;
+	width: 20%;
+	float: left;
+	background-color:#FFF;
+}
+
+.content {
+	width: 60%;
+	float: left;
+	height:auto;
+	margin:auto;
+	background-color:#454E50;
+}
+
+.footer {
+	height: 50px;
+	background-color:#000;
+	clear: both;
+	min-width: 1024px;
+	width: 100%;
+	text-align:center;
+	font-family: "Razer", "Verdana", sans-serif;
+	font-size:12px;
+	color:#CCC;
+	padding-top: 5px;
+	background-image: url(../Imagenes/stripebg.png);
+	background-repeat: repeat;
+	background-position: left top;
+}
+
+
+#cosas {
+	width:88%;
+	height: auto;
+	margin: 10px 3% 3% 3%;
+	background-color:#CCC;
+}

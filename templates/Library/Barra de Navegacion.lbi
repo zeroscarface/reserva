@@ -1,0 +1,28 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> <nav style="float:none">
+                <ul>
+                    <li class="yellow" style="overflow: hidden; height: 50px; display: block; ">
+                        <p><a href="../index.html">Inicio</a></p>
+                        <p class="subtext">Página de inicio del super sistema.</p>
+                    </li>
+                    
+                    <li class="orange" style="overflow: hidden; height: 50px; display: block; ">
+                        <p><a href="../Agenda.html">Agenda</a></p>
+                        <p class="subtext">Actividades programadas.</p>
+                    </li>
+                    
+                    <li class="red" style="overflow: hidden; height: 50px; display: block; ">
+                        <p><a href="../Estados.html">Estados</a></p>
+                        <p class="subtext">Muetra el estado de las maquinas.</p>
+                    </li>
+                    
+                    <li class="blue" style="overflow: hidden; height: 50px; display: block; ">
+                        <p><a href="../Nosotros.html">Nosotros</a></p>
+                        <p class="subtext">¿Quiénes somos en el MAC?</p>
+                    </li>
+                    
+                    <li class="green" style="overflow: hidden; height: 50px; display: block; ">
+                        <p><a href="../Login.html">Login</a></p>
+                        <p class="subtext">Iniciar Sesión</p>
+                    </li>
+                </ul>
+            </nav>
