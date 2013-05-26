@@ -13,7 +13,7 @@
 	<script src="/media/NavBar/animated-menu.js" type="text/javascript">
 	</script>
 	
-	<title>Reserva Laboratorio Docente de Aulas Computarizadas</title>
+	<title>Reserva Aulas Computarizadas</title>
 
       </head>
 
@@ -26,8 +26,8 @@
             </div>
             
             <div id="logo">
-              <h1 style="color:#2F9AB9; padding:20px 0 0 10px">Reserva Laboratorio Docente de Aulas Computarizadas</h1>
-              <p style=" margin-top: -60px; padding: 0 0 0 10px">Frefretion y mas frefretion</p>
+              <h1 style="color:#2F9AB9; padding:20px 0 0 10px">Reserva Aulas Computarizadas</h1>
+              <!-- <p style=" margin-top: -60px; padding: 0 0 0 10px">Frefretion y mas frefretion</p> -->
             </div>
             
             <div class="Colorcito">
@@ -49,12 +49,12 @@
 		    <p class="subtext">Página de inicio del super sistema.</p>
 		  </li>
 		  <li class="orange" style="overflow: hidden; height: 50px; display: block; ">
-		    <p><a href="/agenda">Agenda</a></p>
-		    <p class="subtext">Actividades programadas.</p>
+		    <p><a href="/horario">Horario</a></p>
+		    <p class="subtext">Consultar horas reservadas.</p>
 		  </li>
 		  <li class="red" style="overflow: hidden; height: 50px; display: block; ">
-		    <p><a href="/estados">Estados</a></p>
-		    <p class="subtext">Muetra el estado de las maquinas.</p>
+		    <p><a href="/reservar">Reservar</a></p>
+		    <p class="subtext">Reservar un horario de las salas.</p>
 		  </li>
 		  <li class="blue" style="overflow: hidden; height: 50px; display: block; ">
 		    <p><a href="/nosotros">Nosotros</a></p>
@@ -67,15 +67,12 @@
 		</ul>
               </nav>
               
-	      <div id="marco" style="text-align:center; background-color:#000; padding: 100px 0 20px 0">    
-		<img src="/media/Assets/Imagenes/ima1.png" width="615" height="356" />
-              </div>
+	      	{% block centro %} {% endblock %}
               
               
               <!-- INCIO DE LA PARTE MAS IMPORTANTE, EN EL DIV COSAS VAN LAS COSAS QUE CAMBIEN -->
-              <div id="cosas" style="padding: 5px 30px 30px 30px">
+
 		{% block contenido %} {% endblock %}
-              </div>
               <!-- FINAL DE COSAS -->
 	      
             </div>
