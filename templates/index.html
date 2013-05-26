@@ -3,10 +3,9 @@
 {% block centro %}
 <div id="cosas" style="padding: 80px 30px 30px 30px">
 <h1 style="text-align:center"> Noticias </h1>
-
-<p>Quisque faucibus, erat id lacinia porttitor, nisl ipsum condimentum quam, sit amet blandit sem urna at augue. Vestibulum vulputate augue a 
-  nisi scelerisque in viverra tellus consectetur. Vivamus sed sem enim, vel dapibus dolor. Vivamus mollis leo sed sem ultricies commodo. Aenean 
-  vel scelerisque ipsum. Curabitur cursus adipiscing mi eu hendrerit. Phasellus vel tortor fringilla massa bibendum ultrices sed quis erat.</p>
+{% for n in noticias %}
+<p> {{ n.titulo }} ({{n.fecha}}) : {{ n.contenido}} </p>
+{% endfor %}
 </div>
 {% endblock %}
 

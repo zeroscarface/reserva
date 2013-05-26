@@ -1,8 +1,11 @@
 from django.shortcuts import render_to_response
-
+from models import *
+import datetime
 
 def index(request):
-    return render_to_response('index.html')
+    noticias = Noticia.objects.filter()
+    return render_to_response('index.html',{'noticias': noticias})
+
 def login(request):
     return render_to_response('login.html')
 def nosotros(request):
