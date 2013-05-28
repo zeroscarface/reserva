@@ -6,10 +6,23 @@
 <div id="cosas" style="padding: 80px 30px 30px 30px">
   <h1 style="text-align:center"> Noticias </h1>
   {% for n in noticias %}
-  <p style="font-weight:bold;">{{ n.titulo }}</p> <p>({{n.fecha}}) : {{ n.contenido}} </p>
+  <div>
+    {% if state == 'in' and rol == 'administrador' %}
+    <form action="/eliminar_noticia/" method="post">  
+      {% csrf_token %}
+      <input type="hidden" name="titulo" value="{{n.titulo}}">
+      <input type="submit" value="X" style="float:right" class="windowRed">
+    </form>
+    {% endif %}
+    <p style="font-weight:bold;">{{ n.titulo }}</p> 
+    <p>({{n.fecha}}) : {{ n.contenido}} </p>
+  </div>
   {% endfor %}
   {% if state == 'in' and rol == 'administrador' %}
-  <center><a href="#box" class="window">Agregar noticia</a></center>
+  <center>
+    <a href="#box" class="window">Agregar noticia</a>
+    <a href="/limpiar_noticias" class="windowRed">Limpiar noticias</a>
+  </center>
   {% endif %}
 </div>
 {% endblock %}
@@ -17,8 +30,10 @@
 
 
 {% block contenido %}
-<div id="cosas" style="padding: 5px 30px 30px 30px">
-<h1  style="text-align:center"> <a class="window" href="/registro"> Registrarse </a></h1>
+<div id="cosas" style="padding: 30px 30px 30px 30px">
+<a style="float:right" class="windowGreen" href="/registro"> Registrar responsable </a></h1>
+<a style="float:center ; margin: 0px 0px 0px 75px" class="windowGreen" href="/registro"> Registrar asignatura </a></h1>
+<a style="float:left" class="windowGreen" href="/registro"> Registrar preparador </a></h1>
 </div>
 {% endblock %}
 
@@ -37,11 +52,12 @@
 	</tr>
 	<tr>
 	  <td><p> Contenido: </p></td>
-	  <td><input style="float:right" alight="left" name="contenido" maxlenght="20" size="40" type="text"><br></td>
+	  <td><input style="float:right" alight="left" name="contenido" maxlenght="20" size="40" type="textarea"><br></td>
 	</tr>
       </table>
-      <input id="textoboton" value="Agregar" type="submit" align="center">
+      <input id="textoboton" class="window" value="Agregar" type="submit" align="center">
     </form>
   </center>
 </div>
 {% endblock %}
+

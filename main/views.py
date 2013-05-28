@@ -61,7 +61,6 @@ def login_user(request):
             else:
                 state = 'out'
                 mensaje = "Su contrasena y/o usuario son incorrectos. Intente de nuevo."
-                
     return render_to_response('login.html',{'state':state, 'username': username, 'mensaje': mensaje},context_instance=RequestContext(request))
 
 def nueva_noticia(request):
@@ -71,15 +70,24 @@ def nueva_noticia(request):
         Noticia.objects.create(titulo=titulo,contenido=contenido)
     return index(request)
 
+def eliminar_noticia(request):
+    noticia= request.POST.get('titulo')
+    Noticia.objects.filter(titulo=noticia).delete()
+    return index(request)
+
 def limpiar_noticias(request):
-    if request.POST:
-        Noticia.objects.create(titulo=titulo,contenido=contenido)
+    for n in Noticia.objects.filter():
+        n.delete()
     return index(request)
     
 
 def nosotros(request):
-    return render_to_response('nosotros.html')
+    state = check(request)
+    return render_to_response('nosotros.html',{'state': state})
+
 def horario(request):
-    return render_to_response('horario.html')
+    state = check(request)
+    return render_to_response('horario.html',{'state': state})
 def reservar(request):
-    return render_to_response('reservar.html')
+    state = check(request)
+    return render_to_response('reservar.html',{'state': state})

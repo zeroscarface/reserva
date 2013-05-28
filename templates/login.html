@@ -32,7 +32,7 @@
     {% if state = 'in' %}
     <form action="/logout/" method="post">
       {% csrf_token %}
-      <input class="window" type="submit" value="Cerrar sesion" />
+      <input class="windowRed" type="submit" value="Cerrar sesion" />
     </form>
     {% endif %}
   </center>
@@ -40,7 +40,14 @@
 {% endblock %}
 
 {% block contenido %}
-<div id="cosas" style="padding: 5px 30px 30px 30px">
-<h1  style="text-align:center"> <a class="window" href="/registro"> Registrarse </a></h1>
+<div id="cosas" style="padding: 30px 30px 30px 30px">
+<a style="float:right" class="windowGreen" href="/registro"> Registrar responsable </a></h1>
+<a style="float:center ; margin: 0px 0px 0px 75px" class="windowGreen" href="/registro"> Registrar asignatura </a></h1>
+<a style="float:left" class="windowGreen" href="/registro"> Registrar preparador </a></h1>
 </div>
 {% endblock %}
+
+
+{% if state = '' or state = 'out' %}
+{% block log %} Logout {% endblock %}
+{% endif %}

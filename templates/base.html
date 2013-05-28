@@ -13,7 +13,7 @@
 	<script src="/media/NavBar/animated-menu.js" type="text/javascript">
 	</script>
 	
-	<title>Reserva Aulas Computarizadas</title>
+	<title>Reserva AC</title>
 
       </head>
 
@@ -61,7 +61,13 @@
 		    <p class="subtext">¿Quiénes somos en el MAC?</p>
 		  </li>
 		  <li class="green" style="overflow: hidden; height: 50px; display: block; ">
-		    <p><a href="/login">Login</a></p>
+		    <p><a href="/login">
+		    {% if state = 'in' %}
+		    Logout
+		    {% else %}
+		    Login
+		    {% endif%}
+		    </a></p>
 		    <p class="subtext">Iniciar Sesión</p>
 		  </li>
 		</ul>
