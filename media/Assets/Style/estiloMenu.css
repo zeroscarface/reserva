@@ -1,0 +1,39 @@
+
+nav ul{
+
+	margin:0 0px 0 0px;
+	padding:0 0 0 0;
+}
+
+nav li{
+	width:20%;
+	height:60px;
+	float:left;
+	color:#191919;
+	text-align:center;
+	overflow:hidden;
+	font-family:"Razer", "Verdana", sans-serif;
+	text-align:center;
+}
+
+nav a{
+	color:#FFF;
+	text-decoration:none;
+	text-shadow: 1px 1px 5px #141312;
+    filter: dropshadow(color=#141312, offx=0, offy=0);
+}
+
+nav p{
+	padding:0px 0px;
+}
+
+nav	.subtext{
+		padding-top:15px;
+	}
+
+/*Menu Color Classes*/
+nav .green{background:#6AA63B url(../Imagenes/Iconos/login.png) bottom left no-repeat;}
+nav .yellow{background:#FBC700 url(../Imagenes/Iconos/home.png) bottom left no-repeat;}
+nav .red{background:#D52100 url(../Imagenes/Iconos/estado.png) bottom left no-repeat;}
+nav .orange{background:#F93 url(../Imagenes/Iconos/agenda.png) bottom left no-repeat;}
+nav .blue{background:#0292C0 url(../Imagenes/Iconos/nosotros.png) bottom left no-repeat;}

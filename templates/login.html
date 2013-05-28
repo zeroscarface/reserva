@@ -2,16 +2,45 @@
 
 {% block centro %}
 <div id="cosas" style="padding: 80px 30px 30px 30px">
-<h1 style="text-align:center"> Iniciar sesion </h1>
+  <h1 style="text-align:center"> Iniciar sesion </h1>
+  <center>
+    <p> {{ mensaje }} </p> 
 
-<p>Quisque faucibus, erat id lacinia porttitor, nisl ipsum condimentum quam, sit amet blandit sem urna at augue. Vestibulum vulputate augue a 
-  nisi scelerisque in viverra tellus consectetur. Vivamus sed sem enim, vel dapibus dolor. Vivamus mollis leo sed sem ultricies commodo. Aenean 
-  vel scelerisque ipsum. Curabitur cursus adipiscing mi eu hendrerit. Phasellus vel tortor fringilla massa bibendum ultrices sed quis erat.</p>
+    {% if state = 'out' or state = '' %}
+    <form action="/login/" method="post">
+      {% csrf_token %}
+      {% if next %}
+      <input type="hidden" name="next" value="{{ next }}" />
+      {% endif %}
+      <table>
+	<tr>
+	  <td> <p> Usuario: </p></td>
+	  <td>  <input style="float:right;" type="text" name="username" value="{{ username}}" align="left" /></td>
+	</tr>
+	<tr>
+	  <td> <p> Clave: </p> </td>
+	  <td> <input style="float:right" type="password" name="password" value="" alight="left"/> </td>
+	</tr>
+	<tr>
+	  <td></td>
+	  <td> <input class="window" id="textoboton" type="submit" value="Iniciar sesion" /></td>
+	</tr>
+      </table>
+    </form>
+    {% endif %}
+
+    {% if state = 'in' %}
+    <form action="/logout/" method="post">
+      {% csrf_token %}
+      <input class="window" type="submit" value="Cerrar sesion" />
+    </form>
+    {% endif %}
+  </center>
 </div>
 {% endblock %}
 
 {% block contenido %}
 <div id="cosas" style="padding: 5px 30px 30px 30px">
-<h1  style="text-align:center"> <a href="/registro"> Registrarse </a></h1>
+<h1  style="text-align:center"> <a class="window" href="/registro"> Registrarse </a></h1>
 </div>
 {% endblock %}

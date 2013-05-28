@@ -1,16 +1,47 @@
 {% extends 'base.html' %}
 
 {% block centro %}
+<script type="text/javascript" src="/media/Assets/magia.js"></script>
+
 <div id="cosas" style="padding: 80px 30px 30px 30px">
-<h1 style="text-align:center"> Noticias </h1>
-{% for n in noticias %}
-<p> {{ n.titulo }} ({{n.fecha}}) : {{ n.contenido}} </p>
-{% endfor %}
+  <h1 style="text-align:center"> Noticias </h1>
+  {% for n in noticias %}
+  <p style="font-weight:bold;">{{ n.titulo }}</p> <p>({{n.fecha}}) : {{ n.contenido}} </p>
+  {% endfor %}
+  {% if state == 'in' and rol == 'administrador' %}
+  <center><a href="#box" class="window">Agregar noticia</a></center>
+  {% endif %}
 </div>
 {% endblock %}
 
+
+
 {% block contenido %}
 <div id="cosas" style="padding: 5px 30px 30px 30px">
-<h1  style="text-align:center"> <a href="/registro"> Registrarse </a></h1>
+<h1  style="text-align:center"> <a class="window" href="/registro"> Registrarse </a></h1>
+</div>
+{% endblock %}
+
+
+
+{% block oculto %}
+<div id="box" class="popup">
+  <center>
+    <form id="proy" class="texto" action="/nueva_noticia/" method="post">
+      {% csrf_token %}
+      <legend style="font-size: 120%;">Nueva Noticia</legend>
+      <table>
+	<tr>
+	  <td><p > Titulo: </p> </td>
+	  <td><input name="titulo" align="left" style="float:right" maxlenght="20" size="40" type="text"><br></td>
+	</tr>
+	<tr>
+	  <td><p> Contenido: </p></td>
+	  <td><input style="float:right" alight="left" name="contenido" maxlenght="20" size="40" type="text"><br></td>
+	</tr>
+      </table>
+      <input id="textoboton" value="Agregar" type="submit" align="center">
+    </form>
+  </center>
 </div>
 {% endblock %}
